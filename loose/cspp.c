@@ -28,7 +28,8 @@ void swapState(struct State *a, struct State *b) {
     *b = temp;
 }
 
-// Function to create and initialize a Priority Queue
+// start pq
+// the heap works as a tree thing because that way we can sort things in log n time not n time
 struct PriorityQueue* createPQ() {
     struct PriorityQueue* pq = (struct PriorityQueue*)malloc(sizeof(struct PriorityQueue));
     pq->heap = (struct State*)malloc(10 * sizeof(struct State));
@@ -37,8 +38,7 @@ struct PriorityQueue* createPQ() {
     return pq;
 }
 
-// --- The PUSH logic --- 
-// After adding an element to the end, we "bubble it up" to its correct spot.
+// push
 void heapifyUp(struct PriorityQueue* pq, int index) {
     int parent = (index - 1) / 2;
     if (index > 0 && pq->heap[index].time < pq->heap[parent].time) {
@@ -61,9 +61,7 @@ void push(struct PriorityQueue* pq, struct State newState) {
     heapifyUp(pq, pq->size - 1);
 }
 
-// --- The POP logic ---
-// We take the top element, replace it with the last element,
-// and then "bubble it down" to its correct spot.
+// pop
 void heapifyDown(struct PriorityQueue* pq, int index) {
     int left = 2 * index + 1;
     int right = 2 * index + 2;
