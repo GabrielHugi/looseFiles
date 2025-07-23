@@ -4,7 +4,7 @@ cls
 
 :: This was made by AI because I don't care, it works tho i tested it.
 :: i verify all the scripts i make with these oficial solutions from obi you can test it yourself just run this in the root directory of the zip you will download from the obi site and then add the .exe compiled code there and just run it. 1 = it matches, 0 it doesn't
-:: theres a bug here but it doesn't actually affect anything so idc
+:: you need to name ur output file trofeu.exe for this script to work
 
 :: Outer loop: Finds the main directories (e.g., "1", "2", "3").
 for /d %%d in (*) do (
